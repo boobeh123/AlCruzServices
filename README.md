@@ -17,3 +17,4 @@ Al Cruz Services webpage - https://alcruzservices.netlify.app/
 ## 📢 Developer's Notes - Initial commit
 - Added normalize.css
 - Add images
+- Add favicon

@@ -12,6 +12,13 @@ Al Cruz Services webpage - https://alcruzservices.netlify.app/
 <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="HTML" height="50"/><img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS" height="50"/><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" height="50"/>
 
 ## Version History
+# 🛠️ Al Cruz Services Patch 0.0.003
+📅 **Release Date:** May 25th, 2026
+
+## 📢 Developer's Notes
+* Add services, contact us, footer 
+
+---------------------------------------------------------------------------------------------------------------------------
 # 🛠️ Al Cruz Services Patch 0.0.002
 📅 **Release Date:** May 19th, 2026
 

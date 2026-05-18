@@ -6,6 +6,7 @@ Al Cruz Services webpage - https://alcruzservices.netlify.app/
 ## Features
 * Static webpage deployed with Netlify
 * WebP image format
+* Mobile viewport responsive
 
 ## Technologies
 <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="HTML" height="50"/><img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS" height="50"/><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" height="50"/>
@@ -18,3 +19,7 @@ Al Cruz Services webpage - https://alcruzservices.netlify.app/
 - Added normalize.css
 - Add images
 - Add favicon
+- Add hero section  
+    - Refactor hero section design & color scheme
+- Update favicons
+- Add nav & hamburger menu

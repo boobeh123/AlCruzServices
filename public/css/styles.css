@@ -122,7 +122,130 @@ img {
 /**************************************************************
 Header
 ***************************************************************/
+.siteHeader {
+    position: relative;
+    z-index: 10;
+    background-color: var(--colorPaper);
+}
 
+.primaryNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spaceLg);
+    max-width: var(--maxContent);
+    padding: var(--spaceLg) clamp(1.5rem, 4vw, 4rem);
+    margin: 0 auto;
+}
+
+.navWordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spaceSm);
+    font-family: var(--fontDisplay);
+    font-weight: 500;
+    font-size: 1.375rem;
+    letter-spacing: -0.01em;
+    color: var(--colorInk);
+    transition: color 0.2s ease;
+}
+
+.navWordmarkIcon {
+    width: 1.875rem;
+    height: 1.875rem;
+    flex-shrink: 0;
+    transform: translateY(-3.5px)
+}
+
+.navWordmark:hover {
+    color: var(--colorAccent);
+}
+
+.navMenu {
+    display: flex;
+    align-items: center;
+    gap: var(--spaceXl);
+}
+
+.navLinks {
+    display: flex;
+    gap: var(--spaceXl);
+}
+
+.navLink {
+    position: relative;
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--colorInk);
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--colorAccent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+}
+
+.navLink:hover::after,
+.navLink:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.navLink:focus-visible {
+    outline: none;
+}
+
+.navPhone {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spaceSm);
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--colorInk);
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+.navPhone i {
+    color: var(--colorAccent);
+    font-size: 0.8125rem;
+}
+
+.navPhone:hover {
+    color: var(--colorAccent);
+}
+
+/* Mobile menu toggle (hidden on desktop) */
+.navToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navToggleBar {
+    display: block;
+    width: 1.5rem;
+    height: 1.5px;
+    background-color: var(--colorInk);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
 
 /**************************************************************
 Hero
@@ -271,6 +394,67 @@ Media queries
 
     .btn {
         width: 100%;
+    }
+
+    .navToggle {
+        display: flex;
+    }
+
+    .navMenu {
+        position: fixed;
+        inset: 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space2xl);
+        padding: var(--space2xl) var(--spaceLg);
+        background-color: var(--colorPaper);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 20;
+    }
+
+    .navMenu[data-open="true"] {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spaceLg);
+    }
+
+    .navLink {
+        font-family: var(--fontDisplay);
+        font-weight: 500;
+        font-size: 2rem;
+        letter-spacing: -0.015em;
+    }
+
+    /* Hamburger transforms into an X when menu is open */
+    .navToggle[aria-expanded="true"] {
+        position: fixed;
+        top: var(--spaceLg);
+        right: clamp(1.5rem, 4vw, 4rem);
+        z-index: 30;
+    }
+
+    .navToggle[aria-expanded="true"] .navToggleBar:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .navToggle[aria-expanded="true"] .navToggleBar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navToggle[aria-expanded="true"] .navToggleBar:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* Prevent background scroll when menu is open */
+    body.navOpen {
+        overflow: hidden;
     }
 }
 

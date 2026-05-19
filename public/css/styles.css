@@ -2,18 +2,20 @@
 Base
 ***************************************************************/
 :root {
-    /* Brand palette */
+    /* Active palette — refined editorial */
+    --colorPaper: #F2EEE6;
+    --colorInk: #1A1A1A;
+    --colorMuted: #6B6B6B;
+    --colorAccent: #9B6B47;
+
+    /* Brand palette — reserved for use in other sections */
     --colorGreen: #157c07;
-    --colorGreenDark: #0e5505;
     --colorGreenDeep: #093b03;
     --colorYellow: #f9f548;
     --colorWhite: #ffffff;
-    --colorOffWhite: #f7f8f5;
-    --colorInk: #1a1f1a;
-    --colorMuted: rgba(255, 255, 255, 0.82);
 
     /* Typography */
-    --fontDisplay: 'Archivo', system-ui, sans-serif;
+    --fontDisplay: 'Newsreader', Georgia, serif;
     --fontBody: 'DM Sans', system-ui, sans-serif;
 
     /* Spacing scale */
@@ -26,8 +28,8 @@ Base
 
     /* Misc */
     --radiusSm: 4px;
-    --radiusMd: 8px;
-    --maxContent: 1200px;
+    --radiusMd: 6px;
+    --maxContent: 1400px;
 }
 
 *,
@@ -39,14 +41,14 @@ Base
 body {
     font-family: var(--fontBody);
     color: var(--colorInk);
-    background-color: var(--colorOffWhite);
+    background-color: var(--colorPaper);
     line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
     font-family: var(--fontDisplay);
-    font-weight: 900;
-    line-height: 1.05;
+    font-weight: 500;
+    line-height: 1.08;
     letter-spacing: -0.015em;
     margin: 0;
 }
@@ -77,44 +79,44 @@ img {
     align-items: center;
     justify-content: center;
     gap: var(--spaceSm);
-    padding: 1rem 1.75rem;
+    padding: 0.95rem 1.75rem;
     font-family: var(--fontBody);
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.9375rem;
     letter-spacing: 0.01em;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: var(--radiusMd);
     cursor: pointer;
     text-align: center;
-    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:focus-visible {
-    outline: 3px solid var(--colorYellow);
+    outline: 2px solid var(--colorAccent);
     outline-offset: 3px;
 }
 
 .btnPrimary {
-    background-color: var(--colorYellow);
-    color: var(--colorGreenDeep);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    background-color: var(--colorInk);
+    color: var(--colorPaper);
+    border-color: var(--colorInk);
 }
 
 .btnPrimary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 10px 24px rgba(26, 26, 26, 0.18);
 }
 
 .btnSecondary {
     background-color: transparent;
-    color: var(--colorWhite);
-    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--colorInk);
+    border-color: rgba(26, 26, 26, 0.25);
 }
 
 .btnSecondary:hover {
-    background-color: var(--colorWhite);
-    color: var(--colorGreenDeep);
-    border-color: var(--colorWhite);
+    background-color: var(--colorInk);
+    color: var(--colorPaper);
+    border-color: var(--colorInk);
 }
 
 /**************************************************************
@@ -126,68 +128,65 @@ Header
 Hero
 ***************************************************************/
 .hero {
-    position: relative;
+    display: grid;
+    grid-template-areas: "content image";
+    grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: var(--space2xl) var(--spaceLg);
-    color: var(--colorWhite);
+    background-color: var(--colorPaper);
+    color: var(--colorInk);
     overflow: hidden;
     isolation: isolate;
-
-    /* Fallback color shows while image loads or if it 404s */
-    background-color: var(--colorGreenDeep);
-    background-image:
-        linear-gradient(
-            105deg,
-            rgba(9, 59, 3, 0.92) 0%,
-            rgba(14, 85, 5, 0.78) 45%,
-            rgba(21, 124, 7, 0.55) 100%
-        ),
-        url('/public/images/herobg.webp');
-    background-size: cover;
-    background-position: center;
 }
 
 .heroContent {
-    position: relative;
-    z-index: 1;
+    grid-area: content;
+    align-self: center;
+    justify-self: end;
     width: 100%;
-    max-width: var(--maxContent);
-    margin: 0 auto;
+    max-width: 38rem;
+    padding: var(--space2xl) clamp(1.5rem, 4vw, 4rem);
 }
 
 .heroEyebrow {
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    margin-bottom: var(--spaceLg);
-    background-color: var(--colorYellow);
-    color: var(--colorGreenDeep);
+    display: flex;
+    align-items: center;
+    gap: var(--spaceMd);
+    margin-bottom: var(--spaceXl);
     font-family: var(--fontBody);
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.8125rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    border-radius: var(--radiusSm);
+    letter-spacing: 0.14em;
+    color: var(--colorMuted);
+}
+
+.heroEyebrow::before {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background-color: var(--colorAccent);
+    flex-shrink: 0;
 }
 
 .heroHeading {
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
-    max-width: 16ch;
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
     margin-bottom: var(--spaceLg);
-    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
 .heroHeadingAccent {
-    color: var(--colorYellow);
+    font-style: italic;
+    font-weight: 400;
 }
 
 .heroSubheading {
-    max-width: 55ch;
+    max-width: 42ch;
     margin-bottom: var(--spaceXl);
+    font-size: clamp(1.05rem, 1.4vw, 1.175rem);
+    line-height: 1.6;
     color: var(--colorMuted);
-    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-    line-height: 1.55;
 }
 
 .heroActions {
@@ -202,30 +201,67 @@ Hero
     flex-wrap: wrap;
     gap: var(--spaceLg);
     padding-top: var(--spaceLg);
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-top: 1px solid rgba(26, 26, 26, 0.12);
 }
 
 .heroBadge {
     display: inline-flex;
     align-items: center;
     gap: var(--spaceSm);
-    color: var(--colorMuted);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 500;
+    color: var(--colorMuted);
 }
 
 .heroBadge i {
-    color: var(--colorYellow);
-    font-size: 0.875rem;
+    color: var(--colorAccent);
+    font-size: 0.8125rem;
+}
+
+.heroImage {
+    grid-area: image;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--colorGreenDeep);
+}
+
+.heroImage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/public/images/herobg.webp');
+    background-size: cover;
+    background-position: center;
+    animation: kenBurns 30s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes kenBurns {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.12) translate(-2%, -1.5%); }
 }
 
 /**************************************************************
 Media queries
 ***************************************************************/
-@media (max-width: 720px) {
+@media (max-width: 760px) {
     .hero {
-        min-height: 90vh;
-        padding: var(--space2xl) var(--spaceMd);
+        grid-template-areas:
+            "image"
+            "content";
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .heroImage {
+        height: 42vh;
+        min-height: 280px;
+    }
+
+    .heroContent {
+        justify-self: stretch;
+        max-width: none;
+        padding: var(--space2xl) var(--spaceLg);
     }
 
     .heroActions {
@@ -236,20 +272,22 @@ Media queries
     .btn {
         width: 100%;
     }
-
-    .heroBadges {
-        gap: var(--spaceMd);
-        flex-direction: column;
-        align-content: center;
-    }
 }
 
 @media (max-width: 480px) {
     .heroHeading {
-        font-size: clamp(2rem, 10vw, 3rem);
+        font-size: clamp(2.25rem, 10vw, 3.25rem);
     }
 
-    .heroEyebrow {
-        font-size: 0.75rem;
+    .heroBadges {
+        gap: var(--spaceMd);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heroImage::before {
+        animation: none;
     }
 }

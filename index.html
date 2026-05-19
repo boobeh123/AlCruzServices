@@ -23,8 +23,7 @@
     <meta name="twitter:title" content="Al Cruz Services | Home Renovation & Bi-Fold Doors on Oahu" />
     <meta name="twitter:description" content="An Oahu home renovation company installing Panoramic bi-fold accordion doors and renovating bathroom & kitchen spaces." />
     <meta name="twitter:image" content="https://alcruzservices.netlify.app/public/images/herobg2.webp" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.webp" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.webp" />
+    <link rel="icon" type="image/svg+xml" href="/public/images/logo.svg" />
     <meta name="theme-color" content="#F2EEE6" />
     <link rel="preload" href="/public/images/herobg.webp" as="image" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" />
@@ -51,7 +50,35 @@
     </script>
 </head>
 <body>
-    <header>
+    <header class="siteHeader">
+        <nav class="primaryNav" aria-label="Primary">
+            <a href="#" class="navWordmark" aria-label="Al Cruz Services home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true" class="navWordmarkIcon">
+                    <path d="M6 26 L24 10 L42 26" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 24 L10 40 L38 40 L38 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 40 L20 30 L28 30 L28 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="24" cy="35" r="0.9" fill="#9B6B47"/>
+                </svg>
+                <span class="navWordmarkText">Al Cruz Services</span>
+            </a>
+            <button class="navToggle" type="button" aria-expanded="false" aria-controls="primaryNavMenu" aria-label="Open menu">
+                <span class="navToggleBar"></span>
+                <span class="navToggleBar"></span>
+                <span class="navToggleBar"></span>
+            </button>
+            <div class="navMenu" id="primaryNavMenu">
+                <ul class="navLinks">
+                    <li><a href="#services" class="navLink">Services</a></li>
+                    <li><a href="#about" class="navLink">About</a></li>
+                    <li><a href="#projects" class="navLink">Projects</a></li>
+                    <li><a href="#contact" class="navLink">Contact</a></li>
+                </ul>
+                <a href="tel:+18087455049" class="navPhone">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <span>(808) 745-5049</span>
+                </a>
+            </div>
+        </nav>
     </header>
     <main>
         <section class="hero" aria-labelledby="heroHeading">

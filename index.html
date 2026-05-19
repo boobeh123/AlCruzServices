@@ -30,11 +30,7 @@
     <!-- <meta name="theme-color" content="#" /> -->
 
     <link rel="preload" href="/public/images/herobg.webp" as="image" />
-
-    <!-- TODO: decide on web fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&family=Raleway:wght@300;400&display=swap" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=DM+Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/public/css/normalize.css">
     <link rel="stylesheet" href="/public/css/styles.css">
@@ -59,8 +55,32 @@
 </head>
 <body>
     <header>
-        <h1>Hello world</h1>
     </header>
+    <main>
+        <section class="hero" aria-labelledby="heroHeading">
+            <div class="heroContent">
+                <p class="heroEyebrow">Oahu's home renovation specialists</p>
+                <h1 id="heroHeading" class="heroHeading">
+                    Open up your home <span class="heroHeadingAccent">to island living</span>
+                </h1>
+                <p class="heroSubheading">
+                    Panoramic bi-fold accordion doors, bathroom and kitchen renovations — installed and serviced by a locally owned, family-operated team.
+                </p>
+                <div class="heroActions">
+                    <a href="#contact" class="btn btnPrimary">Get a free estimate</a>
+                    <a href="tel:+18087455049" class="btn btnSecondary">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>(808) 745-5049</span>
+                    </a>
+                </div>
+                <ul class="heroBadges" aria-label="Why choose Al Cruz Services">
+                    <li class="heroBadge"><i class="fa-solid fa-id-badge" aria-hidden="true"></i> Lic. #BC27320</li>
+                    <li class="heroBadge"><i class="fa-solid fa-check" aria-hidden="true"></i> Free estimates</li>
+                    <li class="heroBadge"><i class="fa-solid fa-medal" aria-hidden="true"></i> 10% military discount</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="/public/js/main.js"></script>
 </body>
-<script src="/public/js/main.js"></script>
 </html>

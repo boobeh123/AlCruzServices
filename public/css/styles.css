@@ -38,6 +38,10 @@ Base
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--fontBody);
     color: var(--colorInk);
@@ -362,6 +366,193 @@ Hero
 @keyframes kenBurns {
     0%   { transform: scale(1) translate(0, 0); }
     100% { transform: scale(1.12) translate(-2%, -1.5%); }
+}
+
+/**************************************************************
+Section primitives (reusable across about/services/projects/contact)
+***************************************************************/
+.sectionEyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--spaceMd);
+    margin-bottom: var(--spaceLg);
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--colorMuted);
+}
+
+.sectionEyebrow::before {
+    content: '';
+    width: 2.5rem;
+    height: 1px;
+    background-color: var(--colorAccent);
+    flex-shrink: 0;
+}
+
+.sectionHeading {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+    margin-bottom: var(--spaceXl);
+}
+
+.sectionHeading em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/**************************************************************
+About
+***************************************************************/
+.about {
+    padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 4vw, 4rem);
+    background-color: var(--colorPaper);
+}
+
+.aboutInner {
+    display: grid;
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+    max-width: var(--maxContent);
+    margin: 0 auto;
+}
+
+/* Image column */
+.aboutImage {
+    margin: 0;
+    position: sticky;
+    top: var(--spaceXl);
+}
+
+.aboutImageFrame {
+    aspect-ratio: 4 / 5;
+    background-color: var(--colorGreenDeep);
+    background-image: url('/public/images/herobg2notxt.webp');
+    background-size: cover;
+    background-position: left;
+    border-radius: var(--radiusSm);
+}
+
+.aboutImageCaption {
+    margin-top: var(--spaceMd);
+    font-family: var(--fontBody);
+    font-size: 0.8125rem;
+    color: var(--colorMuted);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Content column */
+.aboutContent {
+    padding-top: var(--spaceMd);
+}
+
+.aboutLede {
+    font-family: var(--fontDisplay);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    line-height: 1.45;
+    color: var(--colorInk);
+    margin-bottom: var(--spaceLg);
+    max-width: 38ch;
+}
+
+.aboutBody {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--colorMuted);
+    margin-bottom: var(--space2xl);
+    max-width: 42ch;
+}
+
+/* Standout stat */
+.aboutStat {
+    margin: 0 0 var(--space2xl) 0;
+    padding: var(--spaceLg) 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.12);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+}
+
+.aboutStatLabel {
+    display: block;
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--colorMuted);
+    margin-bottom: var(--spaceSm);
+}
+
+.aboutStatValue {
+    margin: 0;
+    font-family: var(--fontDisplay);
+    font-weight: 500;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--colorInk);
+}
+
+.aboutStatSuffix {
+    color: var(--colorAccent);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Values list */
+.aboutValues {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceXl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: aboutValue;
+}
+
+.aboutValue {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spaceLg);
+    align-items: start;
+    padding-top: var(--spaceLg);
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.aboutValue:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.aboutValueNumber {
+    font-family: var(--fontDisplay);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--colorAccent);
+    line-height: 1.6;
+}
+
+.aboutValueTitle {
+    font-family: var(--fontDisplay);
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    color: var(--colorInk);
+    margin: 0 0 var(--spaceXs) 0;
+}
+
+.aboutValueDesc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--colorMuted);
 }
 
 /**************************************************************

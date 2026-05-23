@@ -70,12 +70,11 @@
                 <ul class="navLinks">
                     <li><a href="#about" class="navLink">About</a></li>
                     <li><a href="#services" class="navLink">Services</a></li>
-                    <li><a href="#projects" class="navLink">Projects</a></li>
                     <li><a href="#contact" class="navLink">Contact</a></li>
                 </ul>
-                <a href="tel:+18087455049" class="navPhone">
+                <a href="tel:+18086308481" class="navPhone">
                     <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                    <span>(808) 745-5049</span>
+                    <span>(808) 630-8481</span>
                 </a>
             </div>
         </nav>
@@ -217,6 +216,154 @@
                 </div>
             </div>
         </section>
+        <section class="contact" id="contact" aria-labelledby="contactHeading">
+            <div class="contactInner">
+                <div class="contactAside">
+                    <p class="sectionEyebrow">Contact</p>
+                    <h2 id="contactHeading" class="sectionHeading">
+                        Let's talk about <em>your project</em>.
+                    </h2>
+                    <p class="contactLede">
+                        Tell us what you have in mind — a new bi-fold door, a service call, or a full renovation. We'll follow up with a free, no-obligation estimate.
+                    </p>
+        
+                    <ul class="contactDetails">
+                        <li class="contactDetail">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <div>
+                                <span class="contactDetailLabel">Call</span>
+                                <a href="tel:+18087455049" class="contactDetailValue">(808) 745-5049</a>
+                            </div>
+                        </li>
+                        <li class="contactDetail">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <span class="contactDetailLabel">Email</span>
+                                <a href="mailto:info@alcruzservices.com" class="contactDetailValue">info@alcruzservices.com</a>
+                            </div>
+                        </li>
+                        <li class="contactDetail">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <div>
+                                <span class="contactDetailLabel">Service area</span>
+                                <span class="contactDetailValue">Across Oahu, Hawaii</span>
+                            </div>
+                        </li>
+                    </ul>
+        
+                    <ol class="contactSteps" aria-label="What happens after you reach out">
+                        <li class="contactStep"><span class="contactStepNum">1</span> We review your request and reach out to learn more.</li>
+                        <li class="contactStep"><span class="contactStepNum">2</span> We schedule an on-site measurement and consultation.</li>
+                        <li class="contactStep"><span class="contactStepNum">3</span> You receive a clear, written estimate — no obligation.</li>
+                    </ol>
+                </div>
+        
+                <div class="contactFormWrap">
+                    <form
+                        class="contactForm"
+                        name="contact"
+                        method="POST"
+                        data-netlify="true"
+                        netlify-honeypot="botField"
+                        aria-describedby="formStatus"
+                    >
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="contactHoneypot">
+                            <label>Leave this field empty <input name="botField" tabindex="-1" autocomplete="off" /></label>
+                        </p>
+        
+                        <div class="formRow">
+                            <label class="formLabel" for="fieldName">Name <span class="formRequired" aria-hidden="true">*</span></label>
+                            <input class="formInput" type="text" id="fieldName" name="name" required autocomplete="name" />
+                        </div>
+        
+                        <div class="formGroup">
+                            <div class="formRow">
+                                <label class="formLabel" for="fieldEmail">Email <span class="formRequired" aria-hidden="true">*</span></label>
+                                <input class="formInput" type="email" id="fieldEmail" name="email" required autocomplete="email" />
+                            </div>
+                            <div class="formRow">
+                                <label class="formLabel" for="fieldPhone">Phone</label>
+                                <input class="formInput" type="tel" id="fieldPhone" name="phone" autocomplete="tel" />
+                            </div>
+                        </div>
+        
+                        <div class="formRow">
+                            <label class="formLabel" for="fieldService">What can we help with?</label>
+                            <select class="formInput formSelect" id="fieldService" name="service">
+                                <option value="Bi-fold door installation">Bi-fold door installation</option>
+                                <option value="Door maintenance or service">Door maintenance or service</option>
+                                <option value="Bathroom or kitchen renovation">Bathroom or kitchen renovation</option>
+                                <option value="Something else">Something else</option>
+                            </select>
+                        </div>
+        
+                        <div class="formRow">
+                            <label class="formLabel" for="fieldMessage">Project details <span class="formRequired" aria-hidden="true">*</span></label>
+                            <textarea class="formInput formTextarea" id="fieldMessage" name="message" rows="5" required></textarea>
+                        </div>
+        
+                        <button type="submit" class="btn btnPrimary formSubmit">Send request</button>
+        
+                        <p class="formStatus" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="siteFooter">
+            <div class="footerInner">
+                <div class="footerBrand">
+                    <a href="#" class="footerWordmark" aria-label="Al Cruz Services home">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true" class="footerWordmarkIcon">
+                            <path d="M6 26 L24 10 L42 26" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 24 L10 40 L38 40 L38 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 40 L20 30 L28 30 L28 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="24" cy="35" r="0.9" fill="#9B6B47"/>
+                        </svg>
+                        <span>Al Cruz Services</span>
+                    </a>
+                    <p class="footerTagline">
+                        Panoramic bi-fold door installation, service, and home renovation across Oahu.
+                    </p>
+                </div>
+        
+                <nav class="footerNav" aria-label="Footer">
+                    <h2 class="footerHeading">Explore</h2>
+                    <ul class="footerList">
+                        <li><a href="#about" class="footerLink">About</a></li>
+                        <li><a href="#services" class="footerLink">Services</a></li>
+                        <li><a href="#contact" class="footerLink">Contact</a></li>
+                    </ul>
+                </nav>
+        
+                <div class="footerContact">
+                    <h2 class="footerHeading">Get in touch</h2>
+                    <ul class="footerList">
+                        <li>
+                            <a href="tel:+18086308481" class="footerLink">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                <span>(808) 630-8481</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="mailto:${email}" class="footerLink">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <span>${email}</span>
+                            </a>
+                        </li> -->
+                        <li class="footerContactItem">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <span>Serving Oahu, Hawaii</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="footerBar">
+                <p class="footerCopyright">&copy; <span id="footerYear">2026</span> Al Cruz Services. All rights reserved.</p>
+                <p class="footerColophon">Beautiful Bi-fold doors by Albert Cruz.</p>
+            </div>
+        </footer>
     </main>
     <script src="/public/js/main.js"></script>
 </body>

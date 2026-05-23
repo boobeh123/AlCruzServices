@@ -7,6 +7,7 @@ Base
     --colorInk: #1A1A1A;
     --colorMuted: #6B6B6B;
     --colorAccent: #9B6B47;
+    --colorSurface: #EAE5DA;
 
     /* Brand palette — reserved for use in other sections */
     --colorGreen: #157c07;
@@ -556,6 +557,148 @@ About
 }
 
 /**************************************************************
+Services
+***************************************************************/
+.services {
+    padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 4vw, 4rem);
+    background-color: var(--colorSurface);
+}
+
+.servicesInner {
+    max-width: var(--maxContent);
+    margin: 0 auto;
+}
+
+.servicesHead {
+    max-width: 52rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.servicesIntro {
+    font-size: clamp(1.05rem, 1.4vw, 1.175rem);
+    line-height: 1.6;
+    color: var(--colorMuted);
+    max-width: 46ch;
+}
+
+/* Service list */
+.serviceList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.serviceItem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+    padding: clamp(2rem, 4vw, 3rem) 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.15);
+}
+
+.serviceItem:last-child {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.15);
+}
+
+/* Featured (flagship) row gets a third column for the thumbnail */
+.serviceItemFeatured {
+    grid-template-columns: auto 1fr auto;
+}
+
+.serviceIndex {
+    font-family: var(--fontDisplay);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1;
+    color: var(--colorAccent);
+}
+
+.serviceMain {
+    max-width: 52ch;
+}
+
+.serviceTitle {
+    font-family: var(--fontDisplay);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--colorInk);
+    margin: 0 0 var(--spaceMd) 0;
+}
+
+.serviceItemFeatured .serviceTitle {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+}
+
+.serviceDesc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--colorMuted);
+    margin-bottom: var(--spaceLg);
+}
+
+.serviceCapabilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spaceXs) var(--spaceLg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.serviceCapabilities li {
+    position: relative;
+    padding-left: var(--spaceMd);
+    font-family: var(--fontBody);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--colorInk);
+}
+
+.serviceCapabilities li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--colorAccent);
+}
+
+/* Flagship thumbnail */
+.serviceThumb {
+    width: clamp(8rem, 16vw, 14rem);
+    aspect-ratio: 4 / 3;
+    background-color: var(--colorGreenDeep);
+    background-image: url('/public/images/tools.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radiusSm);
+}
+
+/* Footer CTA */
+.servicesFooter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spaceLg);
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.servicesFooterText {
+    font-family: var(--fontDisplay);
+    font-style: italic;
+    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    color: var(--colorInk);
+}
+
+/**************************************************************
 Media queries
 ***************************************************************/
 @media (max-width: 760px) {
@@ -646,6 +789,18 @@ Media queries
     /* Prevent background scroll when menu is open */
     body.navOpen {
         overflow: hidden;
+    }
+
+    .serviceItem,
+    .serviceItemFeatured {
+        grid-template-columns: 1fr;
+        gap: var(--spaceMd);
+    }
+
+    .serviceThumb {
+        width: 100%;
+        order: -1;
+        aspect-ratio: 16 / 9;
     }
 }
 

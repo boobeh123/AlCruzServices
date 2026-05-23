@@ -699,6 +699,344 @@ Services
 }
 
 /**************************************************************
+Contact
+***************************************************************/
+.contact {
+    padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 4vw, 4rem);
+    background-color: var(--colorPaper);
+}
+
+.contactInner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: start;
+    max-width: var(--maxContent);
+    margin: 0 auto;
+}
+
+/* Aside column */
+.contactLede {
+    font-family: var(--fontDisplay);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    line-height: 1.45;
+    color: var(--colorInk);
+    margin-bottom: var(--spaceXl);
+    max-width: 36ch;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceLg);
+    list-style: none;
+    margin: 0 0 var(--space2xl) 0;
+    padding: var(--spaceXl) 0 0 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.12);
+}
+
+.contactDetail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spaceMd);
+    align-items: start;
+}
+
+.contactDetail > i {
+    color: var(--colorAccent);
+    font-size: 1rem;
+    margin-top: 0.2em;
+    width: 1.25rem;
+    text-align: center;
+}
+
+.contactDetailLabel {
+    display: block;
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--colorMuted);
+    margin-bottom: 0.15rem;
+}
+
+.contactDetailValue {
+    font-size: 1.0625rem;
+    color: var(--colorInk);
+    transition: color 0.2s ease;
+}
+
+a.contactDetailValue:hover {
+    color: var(--colorAccent);
+}
+
+/* What-happens-next steps */
+.contactSteps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceMd);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contactStep {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spaceMd);
+    align-items: start;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--colorMuted);
+}
+
+.contactStepNum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-family: var(--fontDisplay);
+    font-style: italic;
+    font-size: 0.875rem;
+    color: var(--colorAccent);
+    border: 1px solid var(--colorAccent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Form card */
+.contactFormWrap {
+    background-color: var(--colorWhite);
+    border: 1px solid rgba(26, 26, 26, 0.1);
+    border-radius: var(--radiusMd);
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceLg);
+}
+
+/* Honeypot — visually hidden, still reachable by bots */
+.contactHoneypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.formGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spaceLg);
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceXs);
+}
+
+.formLabel {
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--colorInk);
+}
+
+.formRequired {
+    color: var(--colorAccent);
+}
+
+.formInput {
+    font-family: var(--fontBody);
+    font-size: 1rem;
+    color: var(--colorInk);
+    background-color: var(--colorPaper);
+    border: 1px solid rgba(26, 26, 26, 0.18);
+    border-radius: var(--radiusSm);
+    padding: 0.7rem 0.85rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formInput::placeholder {
+    color: var(--colorMuted);
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: var(--colorAccent);
+    box-shadow: 0 0 0 3px rgba(155, 107, 71, 0.15);
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 7rem;
+}
+
+.formSelect {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A1A1A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    background-size: 0.75rem;
+    padding-right: 2.25rem;
+}
+
+.formSubmit {
+    align-self: flex-start;
+    margin-top: var(--spaceXs);
+}
+
+.formStatus {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.formStatus[data-state="success"] {
+    color: var(--colorGreen);
+}
+
+.formStatus[data-state="error"] {
+    color: #b3261e;
+}
+/**************************************************************
+Footer
+***************************************************************/
+.siteFooter {
+    background-color: var(--colorSurface);
+    color: var(--colorInk);
+    padding: clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 4vw, 4rem) var(--spaceXl);
+}
+
+.footerInner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    max-width: var(--maxContent);
+    margin: 0 auto;
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* Brand column */
+.footerWordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spaceSm);
+    font-family: var(--fontDisplay);
+    font-weight: 500;
+    font-size: 1.375rem;
+    color: var(--colorInk);
+    margin-bottom: var(--spaceMd);
+}
+
+.footerWordmarkIcon {
+    width: 1.875rem;
+    height: 1.875rem;
+    flex-shrink: 0;
+    transform: translateY(-3.5px);
+}
+
+.footerTagline {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--colorMuted);
+    max-width: 32ch;
+}
+
+/* Shared column heading */
+.footerHeading {
+    font-family: var(--fontBody);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--colorAccent);
+    margin: 0 0 var(--spaceMd) 0;
+}
+
+/* Link lists */
+.footerList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceSm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footerLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spaceSm);
+    font-size: 0.9375rem;
+    color: var(--colorMuted);
+    transition: color 0.2s ease;
+}
+
+.footerLink i {
+    color: var(--colorAccent);
+    font-size: 0.8125rem;
+    width: 1rem;
+    text-align: center;
+}
+
+.footerLink:hover {
+    color: var(--colorInk);
+}
+
+.footerContactItem {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spaceSm);
+    font-size: 0.9375rem;
+    color: var(--colorMuted);
+}
+
+.footerContactItem i {
+    color: var(--colorAccent);
+    font-size: 0.8125rem;
+    width: 1rem;
+    text-align: center;
+}
+
+/* Credentials column */
+.footerCredentialItem {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--colorMuted);
+    margin-bottom: var(--spaceSm);
+}
+
+/* Bottom bar */
+.footerBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spaceSm);
+    max-width: var(--maxContent);
+    margin: 0 auto;
+    padding-top: var(--spaceXl);
+    border-top: 1px solid rgba(26, 26, 26, 0.15);
+}
+
+.footerCopyright,
+.footerColophon {
+    font-size: 0.8125rem;
+    color: var(--colorMuted);
+}
+
+/**************************************************************
 Media queries
 ***************************************************************/
 @media (max-width: 760px) {
@@ -802,6 +1140,30 @@ Media queries
         order: -1;
         aspect-ratio: 16 / 9;
     }
+
+    .contactInner {
+        grid-template-columns: 1fr;
+        gap: var(--spaceXl);
+    }
+
+    .formGroup {
+        grid-template-columns: 1fr;
+    }
+
+    .formSubmit {
+        align-self: stretch;
+        width: 100%;
+    }
+
+    .footerInner {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spaceXl);
+    }
+
+    .footerBrand {
+        grid-column: 1 / -1;
+    }
+    
 }
 
 @media (max-width: 480px) {

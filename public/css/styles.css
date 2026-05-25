@@ -50,6 +50,17 @@ body {
     line-height: 1.6;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.045;
+    background-image: var(--grainBg, none);
+    background-size: 75% 75%;
+}
+
 h1, h2, h3, h4 {
     font-family: var(--fontDisplay);
     font-weight: 500;
@@ -283,7 +294,7 @@ Hero
     position: relative;
 }
 
-.heroContent::after {
+/* .heroContent::after {
     content: '';
     position: absolute;
     bottom: clamp(1.5rem, 4vw, 4rem);
@@ -294,7 +305,7 @@ Hero
     background-size: 28px 28px;
     pointer-events: none;
     opacity: 0.35;
-}
+} */
 
 .heroEyebrow {
     display: flex;

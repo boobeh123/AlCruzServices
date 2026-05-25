@@ -133,6 +133,10 @@ Header
     background-color: var(--colorPaper);
 }
 
+/**************************************************************
+Nav
+***************************************************************/
+
 .primaryNav {
     display: flex;
     align-items: center;
@@ -275,6 +279,23 @@ Hero
     padding: var(--space2xl) clamp(1.5rem, 4vw, 4rem);
 }
 
+.heroContent {
+    position: relative;
+}
+
+.heroContent::after {
+    content: '';
+    position: absolute;
+    bottom: clamp(1.5rem, 4vw, 4rem);
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(ellipse, rgba(155, 107, 71, 0.2) 3.5px, transparent 7px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    opacity: 0.35;
+}
+
 .heroEyebrow {
     display: flex;
     align-items: center;
@@ -364,11 +385,6 @@ Hero
     will-change: transform;
 }
 
-@keyframes kenBurns {
-    0%   { transform: scale(1) translate(0, 0); }
-    100% { transform: scale(1.12) translate(-2%, -1.5%); }
-}
-
 /**************************************************************
 Section primitives (reusable across about/services/projects/contact)
 ***************************************************************/
@@ -430,6 +446,20 @@ About
     top: var(--spaceXl);
 }
 
+.aboutImage::before {
+    content: '';
+    position: absolute;
+    top: 1.25rem;
+    right: -1.25rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    border: 1px solid rgba(155, 107, 71, 0.28);
+    border-radius: var(--radiusSm);
+    pointer-events: none;
+    z-index: -1;
+    /* border: 2px solid red; */
+}
+
 .aboutImageFrame {
     aspect-ratio: 4 / 5;
     background-color: var(--colorGreenDeep);
@@ -461,7 +491,10 @@ About
     color: var(--colorInk);
     margin-bottom: var(--spaceLg);
     max-width: 38ch;
+    border-left: 2px solid var(--colorAccent);
+    padding-left: var(--spaceLg);
 }
+
 
 .aboutBody {
     font-size: 1rem;
@@ -597,6 +630,11 @@ Services
     align-items: start;
     padding: clamp(2rem, 4vw, 3rem) 0;
     border-top: 1px solid rgba(26, 26, 26, 0.15);
+    transition: background-color 0.25s ease;
+}
+
+.serviceItem:hover {
+    background-color: rgba(155, 107, 71, 0.04);
 }
 
 .serviceItem:last-child {
@@ -615,6 +653,11 @@ Services
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     line-height: 1;
     color: var(--colorAccent);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.serviceItem:hover .serviceIndex {
+    transform: translateX(6px);
 }
 
 .serviceMain {
@@ -724,6 +767,8 @@ Contact
     color: var(--colorInk);
     margin-bottom: var(--spaceXl);
     max-width: 36ch;
+    border-left: 2px solid var(--colorAccent);
+    padding-left: var(--spaceLg);
 }
 
 .contactDetails {
@@ -1037,6 +1082,25 @@ Footer
 }
 
 /**************************************************************
+Animations
+***************************************************************/
+@keyframes kenBurns {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.12) translate(-2%, -1.5%); }
+}
+
+.revealFade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revealFade.revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/**************************************************************
 Media queries
 ***************************************************************/
 @media (max-width: 760px) {
@@ -1163,6 +1227,10 @@ Media queries
     .footerBrand {
         grid-column: 1 / -1;
     }
+
+    .aboutImage::before {
+        bottom: 2.5rem;
+    }
     
 }
 
@@ -1176,10 +1244,29 @@ Media queries
         flex-direction: column;
         align-items: flex-start;
     }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
     .heroImage::before {
         animation: none;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    .revealFade {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .siteHeader {
+        transition: none;
+    }
+
+    .serviceIndex {
+        transition: none;
     }
 }

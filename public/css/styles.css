@@ -1114,6 +1114,14 @@ Animations
 /**************************************************************
 Media queries
 ***************************************************************/
+@media (max-width: 820px) {
+
+    .aboutImage::before {
+        bottom: 2.5rem;
+    }
+
+}
+
 @media (max-width: 760px) {
     .hero {
         grid-template-areas:
@@ -1253,7 +1261,19 @@ Media queries
     .heroBadges {
         gap: var(--spaceMd);
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+    }
+
+    .aboutImage::before {
+        bottom: 4rem;
+    }
+
+}
+
+@media (max-width: 375px) {
+
+    .aboutImage::before {
+        bottom: 4rem;
     }
 
 }

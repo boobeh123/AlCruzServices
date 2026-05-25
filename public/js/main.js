@@ -10,6 +10,7 @@ const serviceItems = document.querySelectorAll('.serviceItem');
 const revealSections = document.querySelectorAll(
     '.aboutInner, .servicesHead, .contactInner, .footerInner'
 );
+const rootEl = document.documentElement;
 
 // ─── Helper functions ─────────────────────────────────────────
 const closeMenu = () => {
@@ -90,6 +91,25 @@ serviceItems.forEach((item, index) => {
     item.style.transitionDelay = `${index * 0.12}s`;
     revealObserver.observe(item);
 });
+
+const generateGrain = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    const imageData = ctx.createImageData(256, 256);
+    for (let i = 0; i < imageData.data.length; i += 4) {
+        const value = Math.floor(Math.random() * 256);
+        imageData.data[i]     = value;
+        imageData.data[i + 1] = value;
+        imageData.data[i + 2] = value;
+        imageData.data[i + 3] = 255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+    rootEl.style.setProperty('--grainBg', `url(${canvas.toDataURL()})`);
+};
+
+generateGrain();
 
 // ─── Event listeners ─────────────────────────────────────────
 navToggle.addEventListener('click', () => {
